@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life</title>
+    <style>
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .left-panel {
+            flex: 1;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .left-panel h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #start-btn {
+            background-color: #28a745;
+        }
+
+        #stop-btn {
+            background-color: #dc3545;
+        }
+
+        #reset-btn {
+            background-color: #007bff;
+        }
+
+        .right-panel {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        canvas {
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .left-panel {
+                flex: 0 1 auto;
+                box-shadow: none;
+                padding: 10px;
+            }
+
+            .buttons {
+                gap: 10px;
+            }
+
+            button {
+                padding: 8px 15px;
+                font-size: 1em;
+            }
+
+            .right-panel {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .left-panel h1 {
+                font-size: 1.8em;
+            }
+
+            button {
+                padding: 6px 10px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="left-panel">
+        <h1>Game of Life</h1>
+        <div class="buttons">
+            <button id="start-btn" onclick="start()">Start</button>
+            <button id="stop-btn" onclick="stop()">Stop</button>
+            <button id="reset-btn" onclick="reset()">Reset</button>
+        </div>
+    </div>
+
+
+    <div class="right-panel">
+        <canvas></canvas>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
